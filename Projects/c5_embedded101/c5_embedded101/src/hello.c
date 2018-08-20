@@ -52,7 +52,7 @@ int main(void) {
   *(PCC_PORT_C) |= PCC_ENABLE_PORT_MASK;
 
   //2)Pin Direction --->PDDR 0<<x
-  (((GPIO_map_tp) PORT_C)->PDDR) &= ~(1<<12U + 1<<13U);
+  (((GPIO_map_tp) PORT_C)->PDDR) &= ~(1<<12U | 1<<13U);
 
   //3)Port function ---> PCR.Mux :001b=GPIO
   PCR_PORT_C[12U] |= PCR_GPIO_MODE_MASK;
