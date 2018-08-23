@@ -37,27 +37,27 @@ typedef struct {
 
 /***************************************** GPIO related *****************************************/
 
-#define GPIO_BASE 	(0x400FF000)   		/* GPIO base address */
+#define GPIO_BASE 	(0x400FF000u)   		/* GPIO base address */
 
-#define PORT_A		((uint32_t *)(GPIO_BASE + 0x00))	/* PORT A address */
-#define PORT_B		((uint32_t *)(GPIO_BASE + 0x40))	/* PORT B address */
-#define PORT_C		((uint32_t *)(GPIO_BASE + 0x80))	/* PORT C address */
-#define PORT_D		((uint32_t *)(GPIO_BASE + 0xC0))	/* PORT D address */
-#define PORT_E		((uint32_t *)(GPIO_BASE + 0x100))	/* PORT E address */
+#define PORT_A		((uint32_t *)(GPIO_BASE + 0x00u))	/* PORT A address */
+#define PORT_B		((uint32_t *)(GPIO_BASE + 0x40u))	/* PORT B address */
+#define PORT_C		((uint32_t *)(GPIO_BASE + 0x80u))	/* PORT C address */
+#define PORT_D		((uint32_t *)(GPIO_BASE + 0xC0u))	/* PORT D address */
+#define PORT_E		((uint32_t *)(GPIO_BASE + 0x100u))	/* PORT E address */
 
 
 
 #define PTC12		(12U)								/* Button 1 position */
 #define PTC13		(13U)								/* Button 2 position */
 #define PTD15		(15U)								/* Red LED position */
-#define PTD16		(16U)								/* Red LED position */
-#define PTD0		(0U)
+#define PTD0		(0U)								/* Blue LED position */
+#define PTD16		(16U)								/* Green LED position */
 
 #define BTN_1		((uint32_t)(1<<PTC12))				/* Button 1 bitmask */
-#define BTN_2		((uint32_t)(1<<PTC13))				/* Button 1 bitmask */
+#define BTN_0		((uint32_t)(1<<PTC13))				/* Button 0 bitmask */
 #define LED_RED		((uint32_t)(1<<PTD15))				/* Red LED bitmask */
-#define LED_BLUE	((uint32_t)(1<<PTD0))				/* BLUE LED bitmask */
-#define LED_GREEN	((uint32_t)(1<<PTD16))				/* GREEN LED bitmask */
+#define LED_BLUE	((uint32_t)(1<<PTD0))				/* Blue LED bitmask */
+#define LED_GREEN	((uint32_t)(1<<PTD16))				/* Red LED bitmask */
 
 
 typedef struct {
@@ -73,7 +73,7 @@ typedef struct {
 
 
 
-/*********** PCC *******************/
+/***************************************** PCC *****************************************/
 #define PCC_BASE 		(0x40065000u)   		/* PCC base address */
 
 #define PCC_PORT_A		((uint32_t *)(PCC_BASE + 0x124u))	/* PCC PORT A address */
@@ -84,25 +84,11 @@ typedef struct {
 
 #define PCC_ENABLE_PORT_MASK		(1u << 30)
 
-/*********** PCR - Port Control Register *******************/
-#define PCR_PORT_C		((uint32_t *)(0x4004B000))	/* PCC PORT C address */
-#define PCR_PORT_D		((uint32_t *)(0x4004C000))	/* PCC PORT D address */
-
-
+/***************************************** PCR - Port Control Register *****************************************/
+#define PCR_PORT_C		((uint32_t *)(0x4004B000u))	/* PCC PORT C address */
+#define PCR_PORT_D		((uint32_t *)(0x4004C000u))	/* PCC PORT D address */
 
 #define PCR_GPIO_MODE_MASK		(1 << 8)
-
-/*********** PCC *******************/
-
-
-
-
-
-
-
-
-
-
 
 
 
